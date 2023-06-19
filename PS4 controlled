@@ -1,0 +1,48 @@
+
+from adafruit_servokit import ServoKit          # import Servo driver specs 
+import board
+import busio
+import time
+from approxeng.input.selectbinder import ControllerResource           # PS4 controller code
+
+# Bus 0 (pins 28,27) is board defined SCL_1, SDA_1
+# Default Bus 1 (pins 5, 3) is board defined SCL, SDA 
+
+print("Starting PWM control")
+i2c_bus0=(busio.I2C(board.SCL, board.SDA)) # using Bus 1
+print("Initializing ServoKit")
+kit = ServoKit(channels=16, i2c=i2c_bus1)  # from adafruit library
+# kit[0] is drive motor servo driver input 0
+# kit[1] is steering servo driver input 1
+print("connected")
+sweep = range(70,110)
+for degree in sweep :
+    kit.servo[0].angle=degree
+    # kit.servo[1].angle=degree
+    # time.sleep(0.01)
+
+time.sleep(0.5)
+sweep = range(0,180)
+for degree1 in sweep :
+    kit.servo[1].angle=degree1
+    
+last_presses = None
+while True:
+       with ControllerResource() as joystick:
+           print(type(joystick).__name__)
+           while joystick.connected:
+                axis_list = [ 'lx', 'ry' ]
+                for axis_name in axis_list:
+                    # desired_angle is in degrees
+                    joystick_value = joystick[axis_name]
+                    # The joystick value goes from -1.0 ... 1.0 (a range of 2)
+                    # Normalize within a range of 180 degrees
+                    desired_angle = (joystick_value+1)/2*180
+                    
+                    if  axis_name == 'lx' :
+                        kit.servo[0].angle=desired_angle
+                        print(axis_name, joystick[axis_name])
+                        
+                    if axis_name == 'ry' :
+                         kit.continuous_servo[1].throttle=joystick[axis_name]
+            

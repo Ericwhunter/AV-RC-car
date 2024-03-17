@@ -3,21 +3,21 @@ Autonomous driving car
 RC car controlled by Jetson nano
                                                            ![image](https://github.com/EricMEP/AV-RC-car/assets/48544912/087d40a8-cf39-410d-88f2-c99fe3bc2b11)
 
-                                                                 ![image](https://github.com/EricMEP/AV-RC-car/assets/48544912/9fd052c9-b077-4baa-a9e4-9f60b334191b)
+  ![image](https://github.com/EricMEP/AV-RC-car/assets/48544912/9fd052c9-b077-4baa-a9e4-9f60b334191b)
 
 An autonomous car, also known as self-driving cars, are those vehicles that can perfectly drive and navigate with little or no human intervention, guaranteeing the safety and security requirement needed to circulate throughout the existing roads
 
 Parts of the vehicle
 Servo motor: (KS4081-06W) it uses a servo motor to control steering wheels of the car. Servo motor is motor that rotates 0 degrees to 180 degrees depending on received signal PWM (pulse width modulation). For the purposes of this project is to aim to replace the receiver with Arduino or other servo driver shield to imitate the PWM signal to rotate the servo motor.  For most preferences servo motor stay at 90 degrees and turn no more than 45 degrees to either direction to turn left or right. 
 
-                                  ![image](https://github.com/EricMEP/AV-RC-car/assets/48544912/9ca16348-eb84-4ead-9e20-da936d4f949c)      ![image](https://github.com/EricMEP/AV-RC-car/assets/48544912/bb2b91ce-6cf1-42d3-9eb7-3aa0cce44782)
+  ![image](https://github.com/EricMEP/AV-RC-car/assets/48544912/9ca16348-eb84-4ead-9e20-da936d4f949c)      ![image](https://github.com/EricMEP/AV-RC-car/assets/48544912/bb2b91ce-6cf1-42d3-9eb7-3aa0cce44782)
 
 Electronic speed Controller: An Electronic Speed Controller (ESC) is a device employed to regulate and manage the speed of an electric motor. It receives control signals from a receiver and converts them into the suitable power output for the motor. The ESC interprets the control signals, typically in the form of PWM signals, and adjusts the power delivery accordingly.
                                      ![image](https://github.com/EricMEP/AV-RC-car/assets/48544912/3e91143d-b1d2-49d6-a2b1-1f699b039e84)
 
 In the selected RC car, the (Kyosho 82245 60A Brushed ESC KSH KA060-91W) is utilized. This ESC model is designed to directly connect the battery power supply to the ESC itself. The ESC then distributes power to the radio receiver and servo motor. Thus, caution to be taken when connecting ESC to controlling electronics.
  
-                                         ![image](https://github.com/EricMEP/AV-RC-car/assets/48544912/b2b65733-0f3a-44d4-9ce3-6ea7041efb32)
+   ![image](https://github.com/EricMEP/AV-RC-car/assets/48544912/b2b65733-0f3a-44d4-9ce3-6ea7041efb32)
  
 Receiver: a wireless receiver allows an RC car to be controlled via wireless controller. In this project (Syncro KT-231P+) receiver and controller comes with the RC car, in the scope of the project the receiver and controller to considered optional use to control the car when processor is not controlling it. Thus additional multiplexor PCB need to be used for switching between radio receiver and jetson nano. (proposed use of Pololu 4-Channel RC Servo Multiplexer)
  

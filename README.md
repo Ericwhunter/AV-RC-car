@@ -1,6 +1,8 @@
 # AV-RC-car
 Autonomous driving car
 RC car controlled by Jetson nano
+                                                           ![image](https://github.com/EricMEP/AV-RC-car/assets/48544912/087d40a8-cf39-410d-88f2-c99fe3bc2b11)
+
                                                                  ![image](https://github.com/EricMEP/AV-RC-car/assets/48544912/9fd052c9-b077-4baa-a9e4-9f60b334191b)
 
 An autonomous car, also known as self-driving cars, are those vehicles that can perfectly drive and navigate with little or no human intervention, guaranteeing the safety and security requirement needed to circulate throughout the existing roads
